@@ -9,7 +9,11 @@
 </head>
 <body>
     @include('partials.Navbar')
+    <div class="container-fluid d-flex justify-content-center w-80">
+        @include('partials.caroussel')
+    </div>
     @yield('content')
+    @include('partials.footer')
     <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
