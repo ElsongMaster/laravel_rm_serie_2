@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\pg1Controller;
+use App\Http\Controllers\pg2Controller;
+use App\Http\Controllers\pg3Controller;
+use App\Http\Controllers\pg4Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,23 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template.index');
-});
+Route::get('/',[indexController::class,'index']);
 
-Route::get('/pg1', function () {
-    $nom = "Elvis Dushime Emani";
-    return view('pages.pg1',compact('nom'));
-})->name('pg1');
+Route::get('/pg1', [pg1Controller::class,'index'] )->name('pg1');
 
 
-Route::get('/pg2', function () {
-    $age = 28;
-    return view('pages.pg2',compact('age'));
-})->name('pg2');
+Route::get('/pg2',[pg2Controller::class,'index'])->name('pg2');
 
 
-Route::get('/pg3', function () {
-    $adresse = "Molenbeek";
-    return view('pages.pg3',compact('adresse'));
-})->name('pg3');
+Route::get('/pg3',[pg3Controller::class,'index'] )->name('pg3');
+Route::get('/pg4',[pg4Controller::class,'index'] )->name('pg4');
